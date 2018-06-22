@@ -1,5 +1,6 @@
 package com.example.anilreddy.rxjava;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,10 @@ public class SelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    public void startOperatorsActivity(View view) {
+        startActivity(new Intent(this, OperatorsActivity.class));
     }
 
     public void startSearchActivity(View view) {
@@ -25,8 +30,5 @@ public class SelectionActivity extends AppCompatActivity {
     }
 
     public void startNetworkingActivity(View view) {
-    }
-
-    public void startOperatorsActivity(View view) {
     }
 }
