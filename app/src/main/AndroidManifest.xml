@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OperatorsActivity"></activity>
+        <activity android:name=".OperatorsActivity" />
+        <activity android:name=".operations.SimpleExampleActivity"></activity>
     </application>
 
 </manifest>

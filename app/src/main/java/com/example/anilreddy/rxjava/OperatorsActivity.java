@@ -1,8 +1,11 @@
 package com.example.anilreddy.rxjava;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.anilreddy.rxjava.operations.SimpleExampleActivity;
 
 public class OperatorsActivity extends AppCompatActivity {
 
@@ -13,6 +16,7 @@ public class OperatorsActivity extends AppCompatActivity {
     }
 
     public void startSimpleActivity(View view) {
+        startActivity(new Intent(this, SimpleExampleActivity.class));
     }
 
     public void startMapActivity(View view) {
