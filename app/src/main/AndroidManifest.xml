@@ -24,6 +24,7 @@
         <activity android:name=".operations.ZipExampleActivity" />
         <activity android:name=".operations.DisposableExampleActivity" />
         <activity android:name=".operations.TakeExampleActivity" />
+        <activity android:name=".operations.startTimerActivity" />
     </application>
 
 </manifest>
