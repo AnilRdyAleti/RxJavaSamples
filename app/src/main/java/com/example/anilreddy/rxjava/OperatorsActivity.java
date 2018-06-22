@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.anilreddy.rxjava.operations.DisposableExampleActivity;
 import com.example.anilreddy.rxjava.operations.MapExampleActivity;
 import com.example.anilreddy.rxjava.operations.SimpleExampleActivity;
 import com.example.anilreddy.rxjava.operations.ZipExampleActivity;
@@ -30,6 +31,7 @@ public class OperatorsActivity extends AppCompatActivity {
     }
 
     public void startDisposableActivity(View view) {
+        startActivity(new Intent(this, DisposableExampleActivity.class));
     }
 
     public void startTakeActivity(View view) {
