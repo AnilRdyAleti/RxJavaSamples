@@ -43,4 +43,52 @@ public class Utils {
         }
         return userList;
     }
+
+    public static List<User> getUserListWhoLovesCricket() {
+        List<User> userList = new ArrayList<>();
+
+        User userOne = new User();
+        userOne.id = 1;
+        userOne.firstName = "Amit";
+        userOne.lastName = "Shekhar";
+        userList.add(userOne);
+
+        User userTwo = new User();
+        userTwo.id = 2;
+        userTwo.firstName = "Manish";
+        userTwo.lastName = "Kumar";
+        userList.add(userTwo);
+
+        return userList;
+    }
+
+    public static List<User> getUserListWhoLovesFootball() {
+        List<User> userList = new ArrayList<>();
+
+        User userOne = new User();
+        userOne.id = 1;
+        userOne.firstName = "Amit";
+        userOne.lastName = "Shekhar";
+        userList.add(userOne);
+
+        User userTwo = new User();
+        userTwo.id = 3;
+        userTwo.firstName = "Sumit";
+        userTwo.lastName = "Kumar";
+        userList.add(userTwo);
+
+        return userList;
+    }
+
+    public static List<User> filterUserWhoLovesBoth(List<User> cricketFans, List<User> footballFans) {
+        List<User> userWhoLovesBoth = new ArrayList<User>();
+        for (User cricketFan : cricketFans) {
+            for (User footballFan : footballFans) {
+                if (cricketFan.id == footballFan.id) {
+                    userWhoLovesBoth.add(cricketFan);
+                }
+            }
+        }
+        return userWhoLovesBoth;
+    }
 }
