@@ -1,8 +1,8 @@
 package com.example.anilreddy.rxjava;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.anilreddy.rxjava.operations.DisposableExampleActivity;
@@ -10,6 +10,7 @@ import com.example.anilreddy.rxjava.operations.MapExampleActivity;
 import com.example.anilreddy.rxjava.operations.SimpleExampleActivity;
 import com.example.anilreddy.rxjava.operations.TakeExampleActivity;
 import com.example.anilreddy.rxjava.operations.ZipExampleActivity;
+import com.example.anilreddy.rxjava.operations.startTimerActivity;
 
 public class OperatorsActivity extends AppCompatActivity {
 
@@ -40,6 +41,7 @@ public class OperatorsActivity extends AppCompatActivity {
     }
 
     public void startTimerActivity(View view) {
+        startActivity(new Intent(this, startTimerActivity.class));
     }
 
     public void startIntervalActivity(View view) {

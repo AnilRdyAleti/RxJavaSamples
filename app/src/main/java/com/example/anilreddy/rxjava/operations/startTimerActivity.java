@@ -43,7 +43,7 @@ public class startTimerActivity extends AppCompatActivity {
     }
 
     private Observable<Long> getObservable() {
-        return Observable.timer(3, TimeUnit.SECONDS);
+        return Observable.timer(2, TimeUnit.SECONDS);
     }
 
     private Observer<Long> getObserver() {
