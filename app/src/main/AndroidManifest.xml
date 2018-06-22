@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".OperatorsActivity" />
-        <activity android:name=".operations.SimpleExampleActivity"></activity>
+        <activity android:name=".operations.SimpleExampleActivity" />
+        <activity android:name=".operations.MapExampleActivity"></activity>
     </application>
 
 </manifest>

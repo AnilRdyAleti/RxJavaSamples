@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.anilreddy.rxjava.operations.MapExampleActivity;
 import com.example.anilreddy.rxjava.operations.SimpleExampleActivity;
 
 public class OperatorsActivity extends AppCompatActivity {
@@ -20,6 +21,7 @@ public class OperatorsActivity extends AppCompatActivity {
     }
 
     public void startMapActivity(View view) {
+        startActivity(new Intent(this, MapExampleActivity.class));
     }
 
     public void startZipActivity(View view) {
