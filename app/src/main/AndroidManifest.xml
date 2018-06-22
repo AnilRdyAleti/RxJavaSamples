@@ -22,7 +22,8 @@
         <activity android:name=".operations.SimpleExampleActivity" />
         <activity android:name=".operations.MapExampleActivity" />
         <activity android:name=".operations.ZipExampleActivity" />
-        <activity android:name=".operations.DisposableExampleActivity"></activity>
+        <activity android:name=".operations.DisposableExampleActivity" />
+        <activity android:name=".operations.TakeExampleActivity" />
     </application>
 
 </manifest>
