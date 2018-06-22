@@ -32,17 +32,11 @@ public class ZipExampleActivity extends AppCompatActivity {
         btn = findViewById(R.id.btn);
         textView = findViewById(R.id.textView);
 
-        btn.setOnClickListener((v) -> doSomeWork());
+        btn.setOnClickListener((view) -> doSomeWork());
     }
 
     private void doSomeWork() {
         Observable.zip(getCricketFansObservable(), getFootballFansObservable(),
-//                new BiFunction<List<User>, List<User>, List<User>>() {
-//                    @Override
-//                    public List<User> apply(List<User> users, List<User> users2) throws Exception {
-//                        return null;
-//                    }
-//                }
                 //                (cricketFan, footballFan) ->
                 //                    Utils.filterUserWhoLovesBoth(cricketFan, footballFan)
                 Utils::filterUserWhoLovesBoth)
@@ -53,7 +47,7 @@ public class ZipExampleActivity extends AppCompatActivity {
 
     public Observable<List<User>> getCricketFansObservable() {
         return Observable.create((e) -> {
-            if (e.isDisposed()) {
+            if (!e.isDisposed()) {
                 e.onNext(Utils.getUserListWhoLovesCricket());
                 e.onComplete();
             }
@@ -62,7 +56,7 @@ public class ZipExampleActivity extends AppCompatActivity {
 
     public Observable<List<User>> getFootballFansObservable() {
         return Observable.create((e) -> {
-            if (e.isDisposed()) {
+            if (!e.isDisposed()) {
                 e.onNext(Utils.getUserListWhoLovesFootball());
                 e.onComplete();
             }
