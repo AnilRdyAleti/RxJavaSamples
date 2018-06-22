@@ -1,17 +1,14 @@
 package com.example.anilreddy.rxjava.operations;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.anilreddy.rxjava.R;
-import com.example.anilreddy.rxjava.model.User;
 import com.example.anilreddy.rxjava.utils.AppConstant;
-import com.example.anilreddy.rxjava.utils.Utils;
-
-import java.util.List;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
@@ -19,16 +16,17 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
-public class ZipExampleActivity extends AppCompatActivity {
+public class TakeExampleActivity extends AppCompatActivity {
 
-    public static final String TAG = ZipExampleActivity.class.getSimpleName();
+    private static final String TAG = TakeExampleActivity.class.getSimpleName();
     Button btn;
     TextView textView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_zip_example);
+        setContentView(R.layout.activity_example_sample);
+
         btn = findViewById(R.id.btn);
         textView = findViewById(R.id.textView);
 
@@ -36,49 +34,28 @@ public class ZipExampleActivity extends AppCompatActivity {
     }
 
     private void doSomeWork() {
-        Observable.zip(getCricketFansObservable(), getFootballFansObservable(),
-                //                (cricketFan, footballFan) ->
-                //                    Utils.filterUserWhoLovesBoth(cricketFan, footballFan)
-                Utils::filterUserWhoLovesBoth)
-                .subscribeOn(Schedulers.io())
+        getObservable().subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .take(3)
                 .subscribe(getObserver());
     }
 
-    public Observable<List<User>> getCricketFansObservable() {
-        return Observable.create((e) -> {
-            if (!e.isDisposed()) {
-                e.onNext(Utils.getUserListWhoLovesCricket());
-                e.onComplete();
-            }
-        });
+    private Observable<Integer> getObservable() {
+        return Observable.just(1, 2, 3, 4, 5);
     }
 
-    public Observable<List<User>> getFootballFansObservable() {
-        return Observable.create((e) -> {
-            if (!e.isDisposed()) {
-                e.onNext(Utils.getUserListWhoLovesFootball());
-                e.onComplete();
-            }
-        });
-    }
-
-    public Observer<List<User>> getObserver() {
-        return new Observer<List<User>>() {
+    private Observer<Integer> getObserver() {
+        return new Observer<Integer>() {
             @Override
             public void onSubscribe(Disposable d) {
                 Log.d(TAG, " onSubscribe : " + d.isDisposed());
             }
 
             @Override
-            public void onNext(List<User> users) {
-                textView.append(" onNext:");
+            public void onNext(Integer value) {
+                textView.append(" onNext : value : " + value);
                 textView.append(AppConstant.LINE_SEPARATOR);
-                for (User user : users) {
-                    textView.append(" firstName: " + user.firstName);
-                    textView.append(AppConstant.LINE_SEPARATOR);
-                }
-                Log.d(TAG, " onNext : " + users.size());
+                Log.d(TAG, " onNext value : " + value);
             }
 
             @Override
