@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.anilreddy.rxjava.operations.DisposableExampleActivity;
+import com.example.anilreddy.rxjava.operations.IntervalExampleActivity;
 import com.example.anilreddy.rxjava.operations.MapExampleActivity;
 import com.example.anilreddy.rxjava.operations.SimpleExampleActivity;
 import com.example.anilreddy.rxjava.operations.TakeExampleActivity;
@@ -45,6 +46,7 @@ public class OperatorsActivity extends AppCompatActivity {
     }
 
     public void startIntervalActivity(View view) {
+        startActivity(new Intent(this, IntervalExampleActivity.class));
     }
 
     public void startSingleObserverActivity(View view) {
