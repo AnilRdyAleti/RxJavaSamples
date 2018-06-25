@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.anilreddy.rxjava.search.SearchActivity;
+
 public class SelectionActivity extends AppCompatActivity {
 
     @Override
@@ -18,6 +20,7 @@ public class SelectionActivity extends AppCompatActivity {
     }
 
     public void startSearchActivity(View view) {
+        startActivity(new Intent(this, SearchActivity.class));
     }
 
     public void startComposeOperator(View view) {

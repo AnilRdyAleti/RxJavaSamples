@@ -28,7 +28,8 @@
         <activity android:name=".operations.IntervalExampleActivity" />
         <activity android:name=".operations.SingleObserverExampleActivity" />
         <activity android:name=".operations.CompletableObserverExampleActivity" />
-        <activity android:name=".search.SearchActivity"></activity>
+        <activity android:name=".search.SearchActivity" />
+        <activity android:name=".rxbus.RxBusActivity" />
     </application>
 
 </manifest>
