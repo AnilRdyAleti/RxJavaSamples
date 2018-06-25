@@ -26,6 +26,7 @@
         <activity android:name=".operations.TakeExampleActivity" />
         <activity android:name=".operations.startTimerActivity" />
         <activity android:name=".operations.IntervalExampleActivity" />
+        <activity android:name=".operations.SingleObserverExampleActivity" />
     </application>
 
 </manifest>
