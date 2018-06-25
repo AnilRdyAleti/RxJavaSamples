@@ -9,6 +9,7 @@ import com.example.anilreddy.rxjava.operations.DisposableExampleActivity;
 import com.example.anilreddy.rxjava.operations.IntervalExampleActivity;
 import com.example.anilreddy.rxjava.operations.MapExampleActivity;
 import com.example.anilreddy.rxjava.operations.SimpleExampleActivity;
+import com.example.anilreddy.rxjava.operations.SingleObserverExampleActivity;
 import com.example.anilreddy.rxjava.operations.TakeExampleActivity;
 import com.example.anilreddy.rxjava.operations.ZipExampleActivity;
 import com.example.anilreddy.rxjava.operations.startTimerActivity;
@@ -50,6 +51,7 @@ public class OperatorsActivity extends AppCompatActivity {
     }
 
     public void startSingleObserverActivity(View view) {
+        startActivity(new Intent(this, SingleObserverExampleActivity.class));
     }
 
     public void startCompletableObserverActivity(View view) {
