@@ -1,4 +1,4 @@
-package com.example.anilreddy.rxjava.operations;
+package com.example.anilreddy.rxjava.ui.operations;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

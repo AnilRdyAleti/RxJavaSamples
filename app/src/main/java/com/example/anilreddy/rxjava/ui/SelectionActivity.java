@@ -1,9 +1,14 @@
-package com.example.anilreddy.rxjava;
+package com.example.anilreddy.rxjava.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import com.example.anilreddy.rxjava.MyApplication;
+import com.example.anilreddy.rxjava.R;
+import com.example.anilreddy.rxjava.ui.rxbus.RxBusActivity;
+import com.example.anilreddy.rxjava.ui.search.SearchActivity;
 
 public class SelectionActivity extends AppCompatActivity {
 
@@ -18,6 +23,7 @@ public class SelectionActivity extends AppCompatActivity {
     }
 
     public void startSearchActivity(View view) {
+        startActivity(new Intent(this, SearchActivity.class));
     }
 
     public void startComposeOperator(View view) {
@@ -27,6 +33,8 @@ public class SelectionActivity extends AppCompatActivity {
     }
 
     public void startRxBusActivity(View view) {
+        ((MyApplication) getApplication()).sendAutoEvent();
+        startActivity(new Intent(this, RxBusActivity.class));
     }
 
     public void startNetworkingActivity(View view) {

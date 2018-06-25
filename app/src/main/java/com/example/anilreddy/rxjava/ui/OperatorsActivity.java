@@ -1,18 +1,21 @@
-package com.example.anilreddy.rxjava;
+package com.example.anilreddy.rxjava.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.example.anilreddy.rxjava.operations.DisposableExampleActivity;
-import com.example.anilreddy.rxjava.operations.IntervalExampleActivity;
-import com.example.anilreddy.rxjava.operations.MapExampleActivity;
-import com.example.anilreddy.rxjava.operations.SimpleExampleActivity;
-import com.example.anilreddy.rxjava.operations.SingleObserverExampleActivity;
-import com.example.anilreddy.rxjava.operations.TakeExampleActivity;
-import com.example.anilreddy.rxjava.operations.ZipExampleActivity;
-import com.example.anilreddy.rxjava.operations.startTimerActivity;
+import com.example.anilreddy.rxjava.R;
+import com.example.anilreddy.rxjava.ui.operations.CompletableObserverExampleActivity;
+import com.example.anilreddy.rxjava.ui.operations.DisposableExampleActivity;
+import com.example.anilreddy.rxjava.ui.operations.IntervalExampleActivity;
+import com.example.anilreddy.rxjava.ui.operations.MapExampleActivity;
+import com.example.anilreddy.rxjava.ui.operations.SimpleExampleActivity;
+import com.example.anilreddy.rxjava.ui.operations.SingleObserverExampleActivity;
+import com.example.anilreddy.rxjava.ui.operations.TakeExampleActivity;
+import com.example.anilreddy.rxjava.ui.operations.ZipExampleActivity;
+import com.example.anilreddy.rxjava.ui.operations.startTimerActivity;
+
 
 public class OperatorsActivity extends AppCompatActivity {
 
@@ -55,6 +58,7 @@ public class OperatorsActivity extends AppCompatActivity {
     }
 
     public void startCompletableObserverActivity(View view) {
+        startActivity(new Intent(this, CompletableObserverExampleActivity.class));
     }
 
     public void startFlowableActivity(View view) {

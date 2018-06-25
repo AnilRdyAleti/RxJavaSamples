@@ -1,4 +1,4 @@
-package com.example.anilreddy.rxjava.operations;
+package com.example.anilreddy.rxjava.ui.operations;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,13 +10,17 @@ import android.widget.TextView;
 import com.example.anilreddy.rxjava.R;
 import com.example.anilreddy.rxjava.utils.AppConstant;
 
-import io.reactivex.Single;
-import io.reactivex.SingleObserver;
+import java.util.concurrent.TimeUnit;
+
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
-public class SingleObserverExampleActivity extends AppCompatActivity {
+public class startTimerActivity extends AppCompatActivity {
 
-    public static final String TAG = SingleObserverExampleActivity.class.getSimpleName();
+    private final static String TAG = startTimerActivity.class.getSimpleName();
     Button btn;
     TextView textView;
 
@@ -28,26 +32,32 @@ public class SingleObserverExampleActivity extends AppCompatActivity {
         btn = findViewById(R.id.btn);
         textView = findViewById(R.id.textView);
 
-        btn.setOnClickListener((v) -> doSomeWork());
+        btn.setOnClickListener((view) -> doSomeWork());
     }
 
     private void doSomeWork() {
-        Single.just("Amit").subscribe(getSingleObserver());
+        getObservable().subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(getObserver());
 
     }
 
-    private SingleObserver<String> getSingleObserver() {
-        return new SingleObserver<String>() {
+    private Observable<Long> getObservable() {
+        return Observable.timer(2, TimeUnit.SECONDS);
+    }
+
+    private Observer<Long> getObserver() {
+        return new Observer<Long>() {
             @Override
             public void onSubscribe(Disposable d) {
                 Log.d(TAG, " onSubscribe : " + d.isDisposed());
             }
 
             @Override
-            public void onSuccess(String s) {
-                textView.append(" onNext : value : " + s);
+            public void onNext(Long value) {
+                textView.append(" onNext : value : " + value);
                 textView.append(AppConstant.LINE_SEPARATOR);
-                Log.d(TAG, " onNext value : " + s);
+                Log.d(TAG, " onNext : value : " + value);
             }
 
             @Override
@@ -55,6 +65,13 @@ public class SingleObserverExampleActivity extends AppCompatActivity {
                 textView.append(" onError : " + e.getMessage());
                 textView.append(AppConstant.LINE_SEPARATOR);
                 Log.d(TAG, " onError : " + e.getMessage());
+            }
+
+            @Override
+            public void onComplete() {
+                textView.append(" onComplete : ");
+                textView.append(AppConstant.LINE_SEPARATOR);
+                Log.d(TAG, " onComplete : ");
             }
         };
     }
