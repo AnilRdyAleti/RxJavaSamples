@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.example.anilreddy.rxjava.MyApplication;
 import com.example.anilreddy.rxjava.R;
+import com.example.anilreddy.rxjava.ui.pagination.PaginationActivity;
 import com.example.anilreddy.rxjava.ui.rxbus.RxBusActivity;
 import com.example.anilreddy.rxjava.ui.search.SearchActivity;
 
@@ -30,6 +31,7 @@ public class SelectionActivity extends AppCompatActivity {
     }
 
     public void startPaginationActivity(View view) {
+        startActivity(new Intent(this, PaginationActivity.class));
     }
 
     public void startRxBusActivity(View view) {

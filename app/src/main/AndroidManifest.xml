@@ -31,6 +31,7 @@
         <activity android:name=".ui.operations.CompletableObserverExampleActivity" />
         <activity android:name=".ui.search.SearchActivity" />
         <activity android:name=".ui.rxbus.RxBusActivity" />
+        <activity android:name=".ui.pagination.PaginationActivity"></activity>
     </application>
 
 </manifest>
