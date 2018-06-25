@@ -5,31 +5,32 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SelectionActivity">
+        <activity android:name=".ui.SelectionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OperatorsActivity" />
-        <activity android:name=".operations.SimpleExampleActivity" />
-        <activity android:name=".operations.MapExampleActivity" />
-        <activity android:name=".operations.ZipExampleActivity" />
-        <activity android:name=".operations.DisposableExampleActivity" />
-        <activity android:name=".operations.TakeExampleActivity" />
-        <activity android:name=".operations.startTimerActivity" />
-        <activity android:name=".operations.IntervalExampleActivity" />
-        <activity android:name=".operations.SingleObserverExampleActivity" />
-        <activity android:name=".operations.CompletableObserverExampleActivity" />
-        <activity android:name=".search.SearchActivity" />
-        <activity android:name=".rxbus.RxBusActivity" />
+        <activity android:name=".ui.OperatorsActivity" />
+        <activity android:name=".ui.operations.SimpleExampleActivity" />
+        <activity android:name=".ui.operations.MapExampleActivity" />
+        <activity android:name=".ui.operations.ZipExampleActivity" />
+        <activity android:name=".ui.operations.DisposableExampleActivity" />
+        <activity android:name=".ui.operations.TakeExampleActivity" />
+        <activity android:name=".ui.operations.startTimerActivity" />
+        <activity android:name=".ui.operations.IntervalExampleActivity" />
+        <activity android:name=".ui.operations.SingleObserverExampleActivity" />
+        <activity android:name=".ui.operations.CompletableObserverExampleActivity" />
+        <activity android:name=".ui.search.SearchActivity" />
+        <activity android:name=".ui.rxbus.RxBusActivity" />
     </application>
 
 </manifest>

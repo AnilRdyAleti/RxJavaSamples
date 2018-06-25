@@ -1,4 +1,4 @@
-package com.example.anilreddy.rxjava.search;
+package com.example.anilreddy.rxjava.ui.search;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
